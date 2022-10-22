@@ -55,7 +55,7 @@ const ForgotPassword = () => {
                     component='div'
                   />
 
-                  <p className='formLabels '>Password</p>
+                  <p className='formLabels '>New Password</p>
                   <Field className='input' type='password' name='password' />
                   <ErrorMessage
                     className='error'

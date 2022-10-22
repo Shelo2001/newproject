@@ -19,25 +19,25 @@ const PostsList = () => {
 
   const lastPostIndex = currentPage * postsPerPage
   const firstPostIndex = lastPostIndex - postsPerPage
-  const currentPosts = allPosts.slice(firstPostIndex, lastPostIndex)
+  const currentPosts = allPosts?.slice(firstPostIndex, lastPostIndex)
 
   return (
     <div>
       <div className='postsContainer'>
         {currentPosts?.map((post, index) => (
-          <Link title='Post Details' to={`/post/${post.id}`}>
+          <div key={index} title='Post Details'>
             <div className='post'>
               <div className='postDetails'>
                 <div>
-                  {allUsers.map((user) => {
-                    if (user.id === post.userId) {
+                  {allUsers?.map((user) => {
+                    if (user?.id === post?.userId) {
                       return (
                         <Link
                           title='User Details'
                           to={`/user/${user.id}`}
                           className='author'
                         >
-                          Author: {user.name}
+                          Author: {user?.name}
                         </Link>
                       )
                     }
@@ -52,7 +52,7 @@ const PostsList = () => {
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
       <Pagination

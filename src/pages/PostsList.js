@@ -24,7 +24,7 @@ const PostsList = () => {
   return (
     <div>
       <div className='postsContainer'>
-        {currentPosts.map((post, index) => (
+        {currentPosts?.map((post, index) => (
           <Link title='Post Details' to={`/post/${post.id}`}>
             <div className='post'>
               <div className='postDetails'>
